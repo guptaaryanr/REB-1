@@ -10,6 +10,8 @@
 
 Works great on **Ubuntu 22.04** under **WSL2** with Python 3.10. ROS 2 Humble is optional.
 
+Zenodo DOI: https://doi.org/10.5281/zenodo.17204854
+
 ---
 
 ## Quickstart (WSL2, no ROS)

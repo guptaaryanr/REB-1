@@ -8,5 +8,6 @@ authors:
     orcid: "https://orcid.org/0009-0001-8179-5145"
 date-released: "2025-09-25"
 repository-code: "https://github.com/guptaaryanr/REB-1"
+doi: https://doi.org/10.5281/zenodo.17204854
 license: "MIT"
 type: software
