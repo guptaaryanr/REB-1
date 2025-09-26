@@ -1,9 +1,20 @@
+---
 title: "REB-1: ROS Energy Benchmark"
+tags:
+  - ROS 2
+  - energy
+  - benchmarking
+  - reproducibility
 authors:
   - name: Aryan Gupta
     orcid: 0009-0001-8179-5145
+    affiliation: 1
+affiliations:
+  - name: Independent Researcher
+    index: 1
 date: 2025-09-25
-bibliography: []
+bibliography: paper.bib
+---
 
 # Summary
 REB-1 is a minimal, ROS 2–friendly energy micro-benchmark and power logger. It samples
@@ -15,6 +26,8 @@ without ROS can still generate reproducible datasets.
 Energy and carbon are increasingly important in robotics. ROS 2 users lack a simple,
 cross-platform logger to capture watts over time and relate them to robot activity.
 REB-1 provides a tiny, reproducible benchmark and analysis pipeline with minimal dependencies.
+While tools exist for latency [@ros2_tracing] and throughput benchmarking [@ros2_benchmark],
+no portable, ROS-compatible benchmark currently addresses the energy and CO₂ dimension.
 
 # Positioning
 REB-1 complements existing ROS benchmarking tools rather than replacing them. Whereas **ros2_tracing**
@@ -50,11 +63,18 @@ It is lightweight, WSL-first, and ROS-optional—useful for CI/CD and educationa
 - `tegrastats` support is best-effort and only used if present.
 - Energy integration uses available power channels; SoC power preferred, GPU as fallback.
 
+# Related Work
+Several projects touch adjacent areas but do not cover REB-1's scope:
+
+- **ros2_tracing** instruments ROS 2 middleware with LTTng to analyze latency and scheduling [@ros2_tracing].
+- **ros2_benchmark** (including the NVIDIA Isaac ROS Benchmark suite) evaluates throughput and performance of ROS 2 pipelines [@ros2_benchmark].
+- **RobotPerf** provides robotics performance benchmarks across platforms, focusing on algorithmic throughput and latency rather than energy [@robotperf].
+- **CodeCarbon** estimates energy and CO₂ for general machine learning workloads, but is not ROS-aware and does not integrate with robot activity topics [@codecarbon].
+- **Jetson-specific tools** such as `tegrastats` and `jtop/jetson_stats` expose device telemetry [@tegrastats; @jtop], but they are platform-specific, lack a unified CSV schema, and do not convert Wh to CO₂.
+
+In contrast, REB-1 uniquely provides a portable, CLI-first yet ROS-compatible micro-benchmark with a fixed CSV schema, deterministic demo workloads, a reproducible dataset, and an analysis notebook converting Wh to grams CO₂. It fills the energy/climate gap in ROS benchmarking alongside existing latency and throughput tools.
+
 # Acknowledgements
 Thanks to the ROS and open-source communities.
 
 # References
-- NVIDIA System Management Interface (nvidia-smi) documentation
-- psutil documentation
-- pandas, numpy, matplotlib, imageio documentation
-- ROS 2 `rclpy` and `geometry_msgs` documentation
