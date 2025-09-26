@@ -13,3 +13,4 @@ dist/
 *.csv
 !data/sample/demo_idle_60s.csv
 !data/sample/demo_work_60s.csv
+.virtual_documents/

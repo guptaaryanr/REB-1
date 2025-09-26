@@ -19,8 +19,8 @@ jobs:
           pip install -e ".[dev]"
       - name: Lint
         run: |
-          ruff check .
-          black --check .
+          ruff check reb1 ros_reb1 tests
+          black --check reb1 ros_reb1 tests
       - name: Pytest
         run: |
           pytest
