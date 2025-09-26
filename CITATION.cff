@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it."
+title: "REB-1: ROS Energy Benchmark"
+version: "0.1.0"
+authors:
+  - family-names: "Gupta"
+    given-names: "Aryan"
+    orcid: "https://orcid.org/0009-0001-8179-5145"
+date-released: "2025-09-25"
+repository-code: "https://github.com/guptaaryanr/REB-1"
+license: "MIT"
+type: software

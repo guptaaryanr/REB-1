@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.build/
+build/
+dist/
+.ipynb_checkpoints/
+*.png
+*.gif
+*.csv
+!data/sample/demo_idle_60s.csv
+!data/sample/demo_work_60s.csv
